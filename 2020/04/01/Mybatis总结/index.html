@@ -78,12 +78,12 @@ function activateLightMode(){
 </ul>
 <h4 id="CURD"><a href="#CURD" class="headerlink" title="CURD"></a>CURD</h4><p>增删改查有一对多，多对一，多对多等，一般会准备好pojo对象，并且对象的属性和数据库表中的字段一一对应。</p>
 <p>以最简单的增加操作为例：</p>
-<a href="https://yylblog.oss-cn-beijing.aliyuncs.com/blog2/image-20200401225818536.png" target="_blank" rel="noopener" data-fancybox="group" data-caption="image-20200401225818536" class="fancybox"><img alt="image-20200401225818536" style="zoom:50%;" title="image-20200401225818536" data-src="https://yylblog.oss-cn-beijing.aliyuncs.com/blog2/image-20200401225818536.png" class="lazyload"></a>
+<a href="https://yylblog.oss-cn-beijing.aliyuncs.com/blog2/image-20200401225818536.png" target="_blank" rel="noopener" data-fancybox="group" data-caption="image-20200401225818536" class="fancybox"><img alt="image-20200401225818536" style="zoom:50%;" data-src="https://yylblog.oss-cn-beijing.aliyuncs.com/blog2/image-20200401225818536.png" class="lazyload" title="image-20200401225818536"></a>
 
 
 
 <p>在mapper文件里，通过select，insert等标签写SQL语句。标签上的id是为了上面调用时找到这条语句， parameterType指定了传入的参数类型，resultType表指定了返回结果的类型。其中 <strong>#{ }用来表示占位符</strong>，<strong>${ }用来表示字符串拼接</strong></p>
-<a href="https://yylblog.oss-cn-beijing.aliyuncs.com/blog2/image-20200401230028536.png" target="_blank" rel="noopener" data-fancybox="group" data-caption="image-20200401230028536" class="fancybox"><img alt="image-20200401230028536" style="zoom:50%;" title="image-20200401230028536" data-src="https://yylblog.oss-cn-beijing.aliyuncs.com/blog2/image-20200401230028536.png" class="lazyload"></a>
+<a href="https://yylblog.oss-cn-beijing.aliyuncs.com/blog2/image-20200401230028536.png" target="_blank" rel="noopener" data-fancybox="group" data-caption="image-20200401230028536" class="fancybox"><img alt="image-20200401230028536" style="zoom:50%;" data-src="https://yylblog.oss-cn-beijing.aliyuncs.com/blog2/image-20200401230028536.png" class="lazyload" title="image-20200401230028536"></a>
 
 
 
