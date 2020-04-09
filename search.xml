@@ -1123,10 +1123,16 @@
       
       <categories>
           
-          <category> 健康 </category>
+          <category> 其他 </category>
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> 健康 </tag>
+            
+        </tags>
       
     </entry>
     
