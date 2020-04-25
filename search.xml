@@ -4,6 +4,44 @@
   
     
     <entry>
+      <title>13-矩形覆盖</title>
+      <link href="/2020/04/25/13-%E7%9F%A9%E5%BD%A2%E8%A6%86%E7%9B%96/"/>
+      <url>/2020/04/25/13-%E7%9F%A9%E5%BD%A2%E8%A6%86%E7%9B%96/</url>
+      
+        <content type="html"><![CDATA[<html><head></head><body><p>我们可以用2✖️1的小矩形横着或者竖着去覆盖更大的矩形。请问用n个2✖️1的小矩形无重叠地覆盖一个2✖️n的大矩形，总共有多少种方法？</p><p>思路：这个问题的本质，是动态规划。</p><p>target = 1时大矩形为2*1，只有一种摆放方法，return1；</p><p>target = 2 时大矩形为2*2，有两种摆放方法，return2；</p><p>target = n 时分为两步考虑：</p><ol><li>第一次摆放一块 2*1 的小矩阵，则摆放方法总共为f(target - 1)</li><li>第二次摆放一块1*2的小矩阵，则摆放方法总共为f(target-2)</li></ol><p><strong>如果看不到这个本质，就会把问题想的很复杂</strong></p><div class="code-area-wrap"><div class="highlight-tools"><i class="fa fa-angle-down code-expand" aria-hidden="true"></i><div class="code_lang">java</div><div class="copy-notice"></div><i class="fa fa-clipboard" aria-hidden="true"></i></div><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>{</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">RectCover</span><span class="params">(<span class="keyword">int</span> target)</span> </span>{</span><br><span class="line">        <span class="keyword">if</span>(target  <= <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(target == <span class="number">1</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(target == <span class="number">2</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">else</span>{</span><br><span class="line">            <span class="keyword">return</span> RectCover((target-<span class="number">1</span>))+RectCover(target-<span class="number">2</span>);</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure></div></body></html>]]></content>
+      
+      
+      <categories>
+          
+          <category> 剑指offer </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>12-反转链表</title>
+      <link href="/2020/04/25/12-%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/"/>
+      <url>/2020/04/25/12-%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/</url>
+      
+        <content type="html"><![CDATA[<html><head></head><body><p>输入一个链表，反转链表后，输出新链表的表头。</p><p>思路：头插法。遍历链表，逐个插到新链表的头部</p><div class="code-area-wrap"><div class="highlight-tools"><i class="fa fa-angle-down code-expand" aria-hidden="true"></i><div class="code_lang">java</div><div class="copy-notice"></div><i class="fa fa-clipboard" aria-hidden="true"></i></div><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>{</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">reverseList</span><span class="params">(ListNode head)</span> </span>{</span><br><span class="line">      <span class="comment">//新链表</span></span><br><span class="line">        ListNode cur = <span class="keyword">null</span>;</span><br><span class="line">        ListNode tmp = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">while</span>(head != <span class="keyword">null</span>){</span><br><span class="line">            tmp = head;</span><br><span class="line">            head = head.next;</span><br><span class="line">          <span class="comment">//头插</span></span><br><span class="line">            tmp.next = cur;</span><br><span class="line">            cur = tmp;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> tmp;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure></div><p>还可以用递归，非常巧妙</p><div class="code-area-wrap"><div class="highlight-tools"><i class="fa fa-angle-down code-expand" aria-hidden="true"></i><div class="code_lang">java</div><div class="copy-notice"></div><i class="fa fa-clipboard" aria-hidden="true"></i></div><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>{</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">reverseList</span><span class="params">(ListNode head)</span> </span>{</span><br><span class="line">        <span class="keyword">if</span>(head == <span class="keyword">null</span> || head.next == <span class="keyword">null</span>)</span><br><span class="line">            <span class="keyword">return</span> head;</span><br><span class="line">      <span class="comment">//反转头结点后的链表</span></span><br><span class="line">        ListNode p =reverseList(head.next);</span><br><span class="line">      <span class="comment">//这一步很巧妙。head.next指向的是后面反转完的链表的末尾结点</span></span><br><span class="line">        head.next.next = head;</span><br><span class="line">      <span class="comment">//断开head和原来head.next的连接</span></span><br><span class="line">        head.next = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">return</span> p;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure></div></body></html>]]></content>
+      
+      
+      <categories>
+          
+          <category> 剑指offer </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>8-变态跳台阶</title>
       <link href="/2020/04/23/8-%E5%8F%98%E6%80%81%E8%B7%B3%E5%8F%B0%E9%98%B6/"/>
       <url>/2020/04/23/8-%E5%8F%98%E6%80%81%E8%B7%B3%E5%8F%B0%E9%98%B6/</url>
