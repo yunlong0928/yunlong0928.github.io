@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>9-06每周总结</title>
+      <link href="/2020/09/06/9-06%E6%AF%8F%E5%91%A8%E6%80%BB%E7%BB%93/"/>
+      <url>/2020/09/06/9-06%E6%AF%8F%E5%91%A8%E6%80%BB%E7%BB%93/</url>
+      
+        <content type="html"><![CDATA[<html><head></head><body><p>这周主要是把BI的枚举配置抽离出来了。前期设计的时候没有完全弄清楚Spring Data ES的用法，只知道可以用Entity映射索引。在和存伟的讨论后，最终确定每个枚举放一个索引，再和游戏Id绑定。实际做的过程中，我想把枚举相关的DAO抽象出来，不然就要写很多几乎一样的Service、Dao、Entity。但是呢，我又发现Entity封装后索引就不能正常映射了。然后又把6个枚举的Dao放在了同一个Service里，用switch处理。虽然功能能实现，但我实在忍不了这样多余的代码，最终想办法利用反射，更少的代码实现了相同功能。这个过程还是很开心的。</p><p>其他印象深刻的事：</p><ul><li>周六公司游戏内测，所有人玩了一天的游戏</li><li>见了九龙，交流了面试的经验，共享了一些资料</li><li>看了诺兰的新片《信条》</li></ul><p>下周的重心：继续摸索自己工作之外的学习路线。暂时还没有必要为公司卖命，提升技术和能力是当下的主干道。</p><ul><li>JavaGuide</li><li>算法4</li></ul></body></html>]]></content>
+      
+      
+      <categories>
+          
+          <category> 每周总结 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>8-29每周总结</title>
       <link href="/2020/08/29/8-29%E6%AF%8F%E5%91%A8%E6%80%BB%E7%BB%93/"/>
       <url>/2020/08/29/8-29%E6%AF%8F%E5%91%A8%E6%80%BB%E7%BB%93/</url>
